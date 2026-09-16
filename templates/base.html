@@ -3,20 +3,48 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
+    {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock %}
 
+    {% block extrameta %}
+    {% endblock %}
+
+    {% block corecss %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
         integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+
+    {% block corejs %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThL2miw3Vo6s20CqT0t/1cHSo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
-    <title>TLC Portfolio</title>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+    <title>TLC Portfolio {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
+    <header class="container-fluid fixed-top bg-dark text-light p-3"></header>
+
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+
+    <div class="container">
+        <h1 class="text-center">TLC Portfolio</h1>
+    </div>
+
     <h1>How can I help?</h1>
 
 
